@@ -5,8 +5,8 @@
       @click="toggleDark()"
       title="Toggle theme"
     >
-      <span i-carbon-sun class="text-sm block dark:hidden"></span>
-      <span i-carbon-moon class="text-sm hidden dark:block"></span>
+      <div i-carbon-sun class="text-sm dark:hidden"></div>
+      <div i-carbon-moon class="text-sm hidden dark:block"></div>
     </button>
 
     <a
@@ -15,7 +15,7 @@
       class="p-2 rounded-lg bg-slate-700/50 hover:bg-slate-600 text-gray-400 hover:text-white transition-colors"
       title="View on GitHub"
     >
-      <span i-carbon-logo-github class="text-sm"></span>
+      <div i-carbon-logo-github class="text-sm"></div>
     </a>
   </div>
 </template>

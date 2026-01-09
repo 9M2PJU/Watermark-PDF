@@ -114,7 +114,7 @@ function download() {
     </div>
 
     <!-- Preview Area -->
-    <div class="bg-slate-800/50 backdrop-blur border border-slate-700/50 rounded-xl p-4 min-h-[200px] sm:min-h-[300px] lg:min-h-[400px]">
+    <div class="bg-slate-800/50 backdrop-blur border border-slate-700/50 rounded-xl p-3 min-h-[150px] sm:min-h-[200px] lg:min-h-[250px]">
       <!-- Image Preview -->
       <div v-if="url" class="flex items-center justify-center">
         <img 
@@ -134,13 +134,12 @@ function download() {
       <!-- Upload Zone -->
       <label 
         v-else 
-        class="flex flex-col items-center justify-center py-12 cursor-pointer group"
+        class="flex flex-col items-center justify-center min-h-[150px] sm:min-h-[200px] lg:min-h-[250px] cursor-pointer group"
       >
-        <div class="p-4 rounded-full bg-slate-700/50 mb-3 group-hover:bg-violet-600/20 transition-colors">
-          <span i-carbon-document-add class="text-3xl text-violet-400"></span>
+        <div class="p-3 rounded-full bg-slate-700/50 mb-2 group-hover:bg-violet-600/20 transition-colors">
+          <div i-carbon-document-add class="text-2xl text-violet-400"></div>
         </div>
-        <p class="text-sm text-gray-300 font-medium">Drop your file here</p>
-        <p class="text-xs text-gray-500 mt-1">or click to browse</p>
+        <p class="text-xs text-gray-300 font-medium">Drop file here or click to browse</p>
         <input type="file" accept="image/*, application/pdf" class="hidden" @change="load">
       </label>
     </div>
