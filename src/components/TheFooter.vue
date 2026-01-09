@@ -1,15 +1,22 @@
 <template>
-  <nav mt-6 inline-flex gap-2 text-xl>
-    <button icon-btn @click="toggleDark()">
-      <div i-carbon-sun dark:i-carbon-moon />
+  <nav class="flex items-center justify-center gap-3">
+    <button 
+      class="icon-btn"
+      @click="toggleDark()"
+      title="Toggle theme"
+    >
+      <div i-carbon-sun class="dark:hidden" />
+      <div i-carbon-moon class="hidden dark:block" />
     </button>
 
     <a
-      i-carbon-logo-github icon-btn
+      class="icon-btn"
       rel="noreferrer"
       href="https://github.com/Efrice/watermark.git"
       target="_blank"
-      title="GitHub"
-    />
+      title="View on GitHub"
+    >
+      <div i-carbon-logo-github />
+    </a>
   </nav>
 </template>

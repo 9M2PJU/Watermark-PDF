@@ -34,14 +34,20 @@ function update(key: ConfigKey, val: string | number | boolean){
 </script>
 
 <template>
-  <div>
-    <TheControl
-      :config="config"
-      @update="update"
-    />
+  <div class="flex flex-col lg:flex-row gap-6 max-w-screen-2xl mx-auto">
+    <!-- Control Panel -->
+    <aside class="lg:w-80 xl:w-96 flex-shrink-0">
+      <TheControl
+        :config="config"
+        @update="update"
+      />
+    </aside>
 
-    <TheMain 
-      :config="config"
-    />
+    <!-- Main Content -->
+    <div class="flex-1 min-w-0">
+      <TheMain 
+        :config="config"
+      />
+    </div>
   </div>
 </template>

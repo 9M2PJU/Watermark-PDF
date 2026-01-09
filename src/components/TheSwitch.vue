@@ -11,44 +11,53 @@ function toggle(){
 </script>
 
 <template>
-  <button class="switch" :class="`${value ? 'light' : ''}`" type="button" role="switch">
-    <span class="check" :class="`${value ? 'light' : ''}`" @click="toggle"></span>
+  <button 
+    class="switch" 
+    :class="{ 'active': value }" 
+    type="button" 
+    role="switch"
+    :aria-checked="value"
+    @click="toggle"
+  >
+    <span class="switch-thumb" :class="{ 'active': value }"></span>
   </button>
 </template>
 
 <style scoped>
 .switch {
   position: relative;
-  border-radius: 11px;
-  display: block;
-  width: 40px;
-  height: 22px;
-  flex-shrink: 0;
-  border: 1px solid rgba(60, 60, 67, .29);
-  background-color: rgba(75, 85, 99, .5);
-}
-
-.switch.light {
-  background-color: rgba(15, 118, 110, 1);
+  width: 44px;
+  height: 24px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.25s ease;
 }
 
 .switch:hover {
-  border-color: #8e8e93;
+  border-color: rgba(124, 58, 237, 0.5);
 }
 
-.check {
+.switch.active {
+  background: linear-gradient(135deg, #7c3aed 0%, #3b82f6 100%);
+  border-color: transparent;
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.4);
+}
+
+.switch-thumb {
   position: absolute;
-  top: 1px;
-  left: 1px;
+  top: 2px;
+  left: 2px;
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background-color: #ffffff;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, .04), 0 1px 2px rgba(0, 0, 0, .06);
-  transition: transform 0.25s;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.25s ease;
 }
 
-.check.light {
-  transform: translate(18px);
+.switch-thumb.active {
+  transform: translateX(20px);
 }
 </style>
