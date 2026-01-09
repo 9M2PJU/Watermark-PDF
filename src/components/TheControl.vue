@@ -42,7 +42,7 @@ const { config } = defineProps<{
       <p class="text-xs text-gray-500 text-center mb-4">
         <span class="inline-flex items-center gap-1">
           <span i-carbon-security text-xs />
-          No server, your files stay private
+                    Host on GitHub, your files will be safe
         </span>
       </p>
       <TheFooter />

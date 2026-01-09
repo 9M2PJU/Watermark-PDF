@@ -1,7 +1,7 @@
-export const WATERMWRK_KEY ="watermark-config"
+export const WATERMWRK_KEY = "watermark-config"
 
 export const defaultConfig = {
-  words: '仅用于工作认证',
+  words: 'CONFIDENTIAL',
   width: 0,
   height: 0,
   fontSize: 16,
