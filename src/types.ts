@@ -4,6 +4,7 @@ export interface Config {
   height: number
   fontSize: number
   color: string
+  opacity: number
   rotate: number
   row: number
   col: number

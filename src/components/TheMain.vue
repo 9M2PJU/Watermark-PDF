@@ -6,13 +6,33 @@ const { config } = defineProps<{
   config: Config
 }>()
 
+// Refs - declare early so watchers can use them
+let img: HTMLImageElement | null
+const canvas = ref()
+const preview = ref()
+const url = ref('')
+const pdfUrl = ref('')
+const loading = ref(false)
+const wrap = ref() as Ref<HTMLElement>
+
+// Flag to prevent duplicate PDF loads during initial load
+let isLoadingPdf = false
+
 watch(config, configChange)
+
+// Reset the loading flag when PDF loading completes
+watch(loading, (newVal) => {
+  if (!newVal && isLoadingPdf) {
+    isLoadingPdf = false
+  }
+})
 
 function configChange() {
   loadInit = false
   if(img)
     preview.value.src = generateCanvas(config, img, loadInit).src
-  if(pdfUrl.value)
+  // Only reload PDF if not currently in initial load process
+  if(pdfUrl.value && !isLoadingPdf)
     loadPdf(pdfUrl.value, config, wrap, loading, loadInit)
 }
 
@@ -32,6 +52,7 @@ function load(e: Event) {
       resolveImage(file)
     if(type === "application/pdf") {
       loading.value = true
+      isLoadingPdf = true
       resolvePDF(file)
     }
   }
@@ -43,11 +64,6 @@ function reLoad(){
   if(pdfUrl.value) pdfUrl.value = ''
   if(wrap.value) wrap.value.innerHTML = ''
 }
-
-let img: HTMLImageElement | null
-const canvas = ref()
-const preview = ref()
-const url = ref('')
 
 function resolveImage(file: Blob){
   const reader = new FileReader()
@@ -66,10 +82,6 @@ function resolveImage(file: Blob){
     url.value = reader.result as string
   }
 }
-
-const pdfUrl = ref('')
-const loading = ref(false)
-const wrap = ref() as Ref<HTMLElement>
 
 function resolvePDF(file: Blob){
   const reader = new FileReader()

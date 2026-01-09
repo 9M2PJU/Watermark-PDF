@@ -37,13 +37,13 @@ function update(key: ConfigKey, val: string | number | boolean){
   <div class="max-w-6xl mx-auto">
     <!-- Mobile: Stack vertically | Desktop: Side by side -->
     <div class="flex flex-col lg:flex-row lg:items-start gap-4">
-      <!-- Sidebar -->
-      <div class="w-full lg:w-72 lg:flex-shrink-0">
+      <!-- Sidebar (appears second on mobile, first on desktop) -->
+      <div class="w-full lg:w-72 lg:flex-shrink-0 order-2 lg:order-1">
         <TheControl :config="config" @update="update" />
       </div>
       
-      <!-- Main Area -->
-      <div class="flex-1">
+      <!-- Main Area (appears first on mobile, second on desktop) -->
+      <div class="flex-1 order-1 lg:order-2">
         <TheMain :config="config" />
       </div>
     </div>

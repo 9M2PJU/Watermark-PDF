@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import { toggleDark } from '~/composables/dark'
+</script>
+
 <template>
   <div class="flex items-center justify-center gap-2">
     <button 
