@@ -114,7 +114,7 @@ function download() {
     </div>
 
     <!-- Preview Area -->
-    <div class="bg-slate-800/50 backdrop-blur border border-slate-700/50 rounded-xl p-3 min-h-[150px] sm:min-h-[200px] lg:min-h-[250px]">
+    <div class="bg-slate-800/50 backdrop-blur border border-slate-700/50 rounded-xl p-3 min-h-[150px] sm:min-h-[200px] lg:min-h-[250px] flex items-center justify-center">
       <!-- Image Preview -->
       <div v-if="url" class="flex items-center justify-center">
         <img 
@@ -127,14 +127,14 @@ function download() {
       </div>
       
       <!-- PDF Preview -->
-      <div v-else-if="pdfUrl" class="overflow-auto">
+      <div v-else-if="pdfUrl" class="overflow-auto w-full">
         <div ref="wrap" class="flex flex-wrap gap-3 justify-center [&>canvas]:rounded-lg [&>canvas]:shadow-xl [&>canvas]:max-w-full [&>canvas]:h-auto"></div>
       </div>
       
       <!-- Upload Zone -->
       <label 
         v-else 
-        class="flex flex-col items-center justify-center min-h-[150px] sm:min-h-[200px] lg:min-h-[250px] cursor-pointer group"
+        class="flex flex-col items-center justify-center cursor-pointer group"
       >
         <div class="p-3 rounded-full bg-slate-700/50 mb-2 group-hover:bg-violet-600/20 transition-colors">
           <div i-carbon-document-add class="text-2xl text-violet-400"></div>
