@@ -1,18 +1,14 @@
-<script setup lang="ts">
-import { toggleDark } from '~/composables/dark'
-</script>
-
 <template>
   <div class="flex items-center justify-center gap-2">
-    <button 
+    <a
+      href="https://hamradio.my"
+      target="_blank"
       class="p-2 rounded-lg bg-slate-700/50 hover:bg-slate-600 text-gray-400 hover:text-white transition-colors"
-      @click="toggleDark()"
-      title="Toggle theme"
+      title="Visit hamradio.my"
     >
-      <div i-carbon-sun class="text-sm dark:hidden"></div>
-      <div i-carbon-moon class="text-sm hidden dark:block"></div>
-    </button>
-
+      <div i-carbon-home class="text-sm"></div>
+    </a>
+    
     <a
       href="https://github.com/9M2PJU/9M2PJU-PDF-Watermark"
       target="_blank"
@@ -23,3 +19,4 @@ import { toggleDark } from '~/composables/dark'
     </a>
   </div>
 </template>
+
