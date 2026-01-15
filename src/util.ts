@@ -201,7 +201,7 @@ export function img2Pdf(name: string, loading: Ref<boolean>) {
     doc.addPage({
       size: [width, height],
     });
-    doc.image(src, 0, 0)
+    doc.image(src, 0, 0, { width: width, height: height })
   }
 
   doc.end()
