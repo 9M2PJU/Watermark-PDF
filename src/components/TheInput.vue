@@ -50,7 +50,7 @@ const labels: Record<string, string> = {
         :id="property"
         v-model="value"
         type="text"
-        class="w-32 sm:w-36 px-2 py-1 text-xs bg-slate-700/50 border border-slate-600 rounded text-white focus:border-violet-500 focus:outline-none"
+        class="w-32 sm:w-36 input-modern"
         placeholder="Enter text..."
       >
     </template>
@@ -77,7 +77,7 @@ const labels: Record<string, string> = {
           max="100" 
           step="5"
           v-model="value"
-          class="w-20 sm:w-24 h-1 bg-slate-600 rounded appearance-none cursor-pointer accent-violet-500"
+          class="w-20 sm:w-24 range-modern"
         >
         <span class="text-[10px] text-gray-500 w-8">{{ value }}%</span>
       </div>
@@ -92,7 +92,7 @@ const labels: Record<string, string> = {
           max="48" 
           step="2"
           v-model="value"
-          class="w-20 sm:w-24 h-1 bg-slate-600 rounded appearance-none cursor-pointer accent-violet-500"
+          class="w-20 sm:w-24 range-modern"
         >
         <span class="text-[10px] text-gray-500 w-6">{{ value }}</span>
       </div>
@@ -108,8 +108,8 @@ const labels: Record<string, string> = {
           :class="[
             'px-2 py-0.5 text-[10px] rounded transition-colors',
             value === preset.value 
-              ? 'bg-violet-600 text-white' 
-              : 'bg-slate-700/50 text-gray-400 hover:bg-slate-600'
+              ? 'btn-gradient !px-2 !py-0.5' 
+              : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/10'
           ]"
         >
           {{ preset.label }}
@@ -126,7 +126,7 @@ const labels: Record<string, string> = {
           max="1" 
           step="0.1"
           v-model="value"
-          class="w-20 sm:w-24 h-1 bg-slate-600 rounded appearance-none cursor-pointer accent-violet-500"
+          class="w-20 sm:w-24 range-modern"
         >
         <span class="text-[10px] text-gray-500 w-6">{{ Math.round(Number(value) * 100) }}%</span>
       </div>
@@ -141,7 +141,7 @@ const labels: Record<string, string> = {
           max="20" 
           step="1"
           v-model="value"
-          class="w-20 sm:w-24 h-1 bg-slate-600 rounded appearance-none cursor-pointer accent-violet-500"
+          class="w-20 sm:w-24 range-modern"
         >
         <span class="text-[10px] text-gray-500 w-6">{{ value }}</span>
       </div>
@@ -156,7 +156,7 @@ const labels: Record<string, string> = {
           max="20" 
           step="1"
           v-model="value"
-          class="w-20 sm:w-24 h-1 bg-slate-600 rounded appearance-none cursor-pointer accent-violet-500"
+          class="w-20 sm:w-24 range-modern"
         >
         <span class="text-[10px] text-gray-500 w-6">{{ value }}</span>
       </div>
@@ -171,7 +171,7 @@ const labels: Record<string, string> = {
           max="200" 
           step="10"
           v-model="value"
-          class="w-20 sm:w-24 h-1 bg-slate-600 rounded appearance-none cursor-pointer accent-violet-500"
+          class="w-20 sm:w-24 range-modern"
         >
         <span class="text-[10px] text-gray-500 w-8">{{ value }}</span>
       </div>
@@ -186,7 +186,7 @@ const labels: Record<string, string> = {
           max="200" 
           step="10"
           v-model="value"
-          class="w-20 sm:w-24 h-1 bg-slate-600 rounded appearance-none cursor-pointer accent-violet-500"
+          class="w-20 sm:w-24 range-modern"
         >
         <span class="text-[10px] text-gray-500 w-8">{{ value }}</span>
       </div>
@@ -201,7 +201,7 @@ const labels: Record<string, string> = {
           max="200" 
           step="8"
           v-model="value"
-          class="w-20 sm:w-24 h-1 bg-slate-600 rounded appearance-none cursor-pointer accent-violet-500"
+          class="w-20 sm:w-24 range-modern"
         >
         <span class="text-[10px] text-gray-500 w-6">{{ value }}</span>
       </div>
@@ -216,7 +216,7 @@ const labels: Record<string, string> = {
           max="200" 
           step="8"
           v-model="value"
-          class="w-20 sm:w-24 h-1 bg-slate-600 rounded appearance-none cursor-pointer accent-violet-500"
+          class="w-20 sm:w-24 range-modern"
         >
         <span class="text-[10px] text-gray-500 w-6">{{ value }}</span>
       </div>
@@ -228,7 +228,7 @@ const labels: Record<string, string> = {
         :id="property"
         v-model="value"
         type="number"
-        class="w-24 px-2 py-1 text-xs text-center bg-slate-700/50 border border-slate-600 rounded text-white focus:border-violet-500 focus:outline-none"
+        class="w-24 input-modern text-center"
       >
     </template>
     
@@ -238,7 +238,7 @@ const labels: Record<string, string> = {
         :id="property"
         v-model="value"
         type="text"
-        class="w-24 px-2 py-1 text-xs text-center bg-slate-700/50 border border-slate-600 rounded text-white focus:border-violet-500 focus:outline-none"
+        class="w-24 input-modern text-center"
       >
     </template>
   </div>

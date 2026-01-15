@@ -109,24 +109,24 @@ function download() {
   <div>
     <!-- Buttons -->
     <div class="flex gap-2 mb-4">
-      <label class="inline-flex items-center gap-1.5 px-4 py-2 bg-violet-600 hover:bg-violet-500 text-white text-sm font-medium rounded-lg cursor-pointer transition-colors">
-        <span i-carbon-upload class="text-base"></span>
-        <span>Upload</span>
+      <label class="btn-gradient">
+        <span i-carbon-upload class="mr-2"></span>
+        <span>Upload File</span>
         <input type="file" accept="image/*, application/pdf" class="hidden" @change="load">
       </label>
       
       <button
-        class="inline-flex items-center gap-1.5 px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white text-sm font-medium rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+        class="btn-secondary flex items-center"
         :disabled="url === '' && pdfUrl === ''"
         @click="download"
       >
-        <span i-carbon-download class="text-base"></span>
-        <span>Download</span>
+        <span i-carbon-download class="mr-2"></span>
+        <span>Download PDF</span>
       </button>
     </div>
 
     <!-- Preview Area -->
-    <div class="bg-slate-800/50 backdrop-blur border border-slate-700/50 rounded-xl p-3 min-h-[150px] sm:min-h-[200px] lg:min-h-[250px] flex items-center justify-center">
+    <div class="glass-card p-6 min-h-[300px] flex items-center justify-center animate-fade-in">
       <!-- Image Preview -->
       <div v-if="url" class="flex items-center justify-center">
         <img 
@@ -146,12 +146,13 @@ function download() {
       <!-- Upload Zone -->
       <label 
         v-else 
-        class="flex flex-col items-center justify-center cursor-pointer group"
+        class="upload-zone w-full h-48 flex flex-col items-center justify-center cursor-pointer group"
       >
-        <div class="p-3 rounded-full bg-slate-700/50 mb-2 group-hover:bg-violet-600/20 transition-colors">
-          <div i-carbon-document-add class="text-2xl text-violet-400"></div>
+        <div class="p-4 rounded-full bg-white/5 mb-4 group-hover:bg-violet-500/10 transition-colors">
+          <div i-carbon-document-add class="text-3xl text-violet-400"></div>
         </div>
-        <p class="text-xs text-gray-300 font-medium">Drop file here or click to browse</p>
+        <p class="text-sm text-gray-400 group-hover:text-violet-300 transition-colors">Select PDF or Image to Watermark</p>
+        <p class="text-[10px] text-gray-500 mt-2">Maximum file size: 10MB</p>
         <input type="file" accept="image/*, application/pdf" class="hidden" @change="load">
       </label>
     </div>

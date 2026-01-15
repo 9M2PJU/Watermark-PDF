@@ -10,15 +10,19 @@ const showAdvanced = ref(false)
 </script>
 
 <template>
-  <div class="bg-slate-800/50 backdrop-blur border border-slate-700/50 rounded-xl p-4 lg:sticky lg:top-4">
+  <div class="glass-card p-5 lg:sticky lg:top-4 animate-fade-in shadow-glow">
     <!-- Header -->
-    <div class="text-center pb-3 mb-3 border-b border-slate-700/50">
-      <div class="flex items-center justify-center gap-2 mb-2">
-        <span i-material-symbols-add-photo-alternate-rounded class="text-xl text-violet-400"></span>
-        <span i-material-symbols:picture-as-pdf class="text-xl text-cyan-400"></span>
+    <div class="text-center pb-4 mb-4 border-b border-white/10">
+      <div class="flex items-center justify-center gap-3 mb-3">
+        <div class="p-2 rounded-xl bg-violet-600/20 glass">
+          <span i-material-symbols-add-photo-alternate-rounded class="text-2xl text-violet-400"></span>
+        </div>
+        <div class="p-2 rounded-xl bg-cyan-600/20 glass">
+          <span i-material-symbols:picture-as-pdf class="text-2xl text-cyan-400"></span>
+        </div>
       </div>
-      <h1 class="text-base font-bold text-white">9M2PJU PDF Watermark</h1>
-      <p class="text-xs text-gray-400">Add watermark to image/pdf</p>
+      <h1 class="text-lg font-black tracking-tight bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent uppercase">9M2PJU WATERMARK</h1>
+      <p class="text-[10px] uppercase font-bold tracking-widest text-gray-500 mt-1">Premium PDF Security Tool</p>
     </div>
 
     <!-- Basic Settings -->
