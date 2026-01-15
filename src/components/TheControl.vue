@@ -16,7 +16,7 @@ const showAdvanced = ref(false)
       <div class="flex items-center justify-center gap-2 mb-2">
         <span class="text-xl">📄</span>
       </div>
-      <h1 class="text-base font-bold text-main">PDF Watermark</h1>
+      <h1 class="text-base font-bold text-main">9M2PJU PDF WATERMARK</h1>
       <p class="text-xs text-dim">Secure & Private Watermarking</p>
     </div>
 
